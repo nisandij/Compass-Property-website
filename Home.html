@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <!-- title -->
+    <title>Compass</title>
+    <meta name="description" content="About Compass" />
+    <meta
+        name="keywords"
+        content="Compass, housing, apartments, flats"
+    />
+    <meta name="author" content="Nisandi Jayasuriya" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- responsive web-->
+    <link rel="stylesheet" href="css/slicknav.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+
+    <!-- common external css style sheet -->
+    <link rel="stylesheet" href="css/Compass.css" />
+
+    <!-- JQuery Ui links-->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <style>
+    
+        .ui-icon.Apartment {
+            background: url("images/apartmentIcon.png") 0 0 no-repeat;
+        }
+        .ui-icon.Flat {
+            background: url("images/flatIcon.jpg") 0 0 no-repeat;
+        }
+        .ui-icon.House {
+            background: url("images/houseIcon.png") 0 0 no-repeat;
+        }
+        .ui-icon.Any {
+            background: url("images/houseIcon.png") 0 0 no-repeat;
+        }
+    </style>
+
+<style> 
+    @media (max-width: 600px) {
+    .menu {
+        display: none;
+    }
+
+    .slicknav_menu {
+        display: block;
+        background-color: rgb(120, 206, 35);
+        width: 480px;
+    }
+
+    .image-main {
+        background-image: url("./images/mainImageSmall.jpg");
+        height: 300px;
+        width: 480px;
+        margin: auto;
+    }
+
+    #button-main {
+        margin: auto;
+        width: 180px;
+        padding: 30px;
+    }
+
+    .section-search {
+        width: 480px;
+        background-color: rgb(157, 248, 66);
+        margin-top: 100px;
+        margin: auto;
+        height: 650px;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #placeholderFavourites, #placeholder {
+        width: 480px;
+    }
+
+    .fieldset-search {
+        margin: 0 10px;
+    }
+
+    /* select type of house */
+    label {
+        padding: 10px;
+    }
+
+    /* set width to the slider */
+    #slider {
+        max-width: 300px;
+        margin-left: 60px;
+    }
+
+    #result {
+        width: 400px;
+        background-color: rgb(157, 248, 66);
+        height: 540px;
+        margin-top: 50px;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    #logo {
+        display: none;
+    }
+    }
+</style>
+
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <a href="Home.html"> <img src="images/compassLogo.png" alt="compass logo"> </a>
+        </div>
+        <nav class="menu">
+            
+            <a href="Home.html">Home</a>
+            <a href="About.html">About Us</a>
+            <a href="Contact.html">Contact Us</a>
+			 <a href="Favourites.html">Favourites</a>
+			
+        </nav>
+    </header>
+    <div class="page-container">
+    <div class="image-main">
+        
+    </div>
+    <section class="section-search" id="section-search" >
+        <h2>Find your Happy Home</h2>
+        <h3>Search for any property</h3>
+        <fieldset class="fieldset-search">
+        <form action="#">
+       
+        <label for="types">Choose Type :
+        <select name="types" id="types">
+            <option id="Apartment" value="Apartment" data-class="Apartment">Apartment</option>
+            <option value="Flat"   id="Flat" data-class="Flat" >Flat</option>
+            <option value="House" id="House" data-class="House">House</option>
+            <option value="Any" id="Any" data-class="Any" selected>Any</option>
+        </select>
+    </label>
+
+        <label for="maxBeds">Max Bedrooms : <input type="text" id="maxBeds" value="5" name="maximumBeds" /></label>
+				<label for="minBeds">Min Bedrooms : <input type="text" id="minBeds" value="1" name="minimumBeds" /></label>
+
+                <label for="time">Time Added : 
+                    <select name="time" id="time">
+                        <option value="January">January (2019)</option>
+                        <option value="February">February (2019)</option>
+                        <option value= "March">March (2019)</option>
+                        <option value="July">July (2019)</option>
+                        <option value="August">August (2019)</option>
+                        <option value="September">September (2019)</option>
+                        <option value= "October">October (2019)</option>
+						<option value="Anytime" selected>Anytime</option>
+                    </select>
+                </label>
+
+        <div id="slider">
+        <label for="amount">Price range:</label>
+        <input type="text" id="amount" readonly style="border:0; color:#0db523; font-weight:bold;"><br>
+        <div id="slider-range"></div>
+        </div>
+        <br>
+
+        <button class="ui-button ui-widget ui-corner-all" id="search" type="button" onclick="showSearch()">Search</button> 
+       
+        </form>
+    </fieldset>
+        
+    </section>
+
+    <div id="placeholder"></div>
+</div>
+   <!-- footer for Home Page-->
+   <footer>
+    <a href="Home.html" class="back">Back to top</a>
+    <p>Copyright &copy; 2021 COMPASS. All Rights Reserved </p>
+  </footer>
+
+      <script src="scripts/Home.js"></script>
+      <script>
+        $(function () {
+            var menu = $('.menu');
+            menu.slicknav();
+
+            // Mark the clicked item as selected
+
+            menu.on('click', 'a', function () {
+                var a = $(this);
+
+                a.siblings().removeClass('selected');
+                a.addClass('selected');
+            });
+        });
+
+      </script>
+      <script src="scripts/jquery.slicknav.js"></script>
+     
+
+</body>
+</html>

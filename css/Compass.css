@@ -1,0 +1,175 @@
+/* ---------- header ---------- */
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background-image: linear-gradient(
+    to right,
+    rgba(183, 230, 241),
+    rgba(255, 255, 255),
+    rgb(205, 245, 186)
+  );
+}
+/* ------body------ */
+
+body {
+  line-height: 1.625;
+  padding: 0;
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#logo {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+#button-main {
+  margin: auto;
+  width: 400px;
+  padding: 30px;
+}
+
+#button-main input[type="button"] {
+  padding: 15px;
+  background-color: white;
+  border: none;
+  color: #26a82c;
+  font-size: 18px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+#button-main input[type="button"]:hover {
+  background-color: rgb(83, 78, 78);
+  color: white;
+}
+
+.image-main {
+  background-image: url("../images/mainImage.jpg");
+  height: 300px;
+  width: 1430px;
+  margin: auto;
+  position: absolute;
+}
+
+/* --------responsive nav------- */
+.menu {
+  font: bold 15px Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.menu a {
+  color: #3d413f;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  margin: 0 20px auto;
+  line-height: 2;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.menu a.selected {
+  color: #ffffff;
+  background-color: #9eb9cc;
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin: 0 5px auto;
+}
+
+/* Making the navigation menu responsive */
+
+.slicknav_menu {
+  display: none;
+}
+
+/* -------- Search-------- */
+
+.section-search {
+  width: 60%;
+  background-image: linear-gradient(
+    to right,
+    rgba(238, 230, 230, 0),
+    rgb(205, 245, 186)
+  );
+  height: 540px;
+  top: 250px;
+  margin: auto;
+  text-align: center;
+  padding: 40px 0;
+  position: relative;
+}
+
+.section-search h2,
+.section-search h3 {
+  color: #272927;
+  font-weight: bold;
+}
+
+.fieldset-search {
+  margin: 0 100px;
+}
+
+/* select type of house */
+label {
+  display: block;
+  padding: 10px;
+}
+
+/* set width to the slider */
+#slider {
+  max-width: 400px;
+  margin-left: 100px;
+}
+
+#result {
+  width: 60%;
+  background-color: rgb(157, 248, 66);
+  height: 540px;
+  margin-top: 50px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* ----------footer---------- */
+footer {
+  margin-top: 100%;
+  margin-bottom: 0;
+  font-size: 15px;
+  background-image: linear-gradient(
+    to right,
+    rgba(183, 230, 241),
+    rgb(205, 245, 186)
+  );
+
+  text-align: center;
+  border-top: 1px solid #b0c4bd;
+  bottom: -550px;
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  padding-top: 20px;
+}
+
+footer a {
+  color: #26a82c;
+  padding: 10px;
+}
+
+/* select with custom icons */
+.ui-selectmenu-menu .ui-menu.customicons .ui-menu-item-wrapper {
+  padding: 0.5em 0 0.5em 3em;
+}
+.ui-selectmenu-menu .ui-menu.customicons .ui-menu-item .ui-icon {
+  height: 24px;
+  width: 24px;
+  top: 0.1em;
+}

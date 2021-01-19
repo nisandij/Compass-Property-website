@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+
+    <!-- title -->
+    <title>Property 3</title>
+    <meta name="description" content="About Compass" />
+    <meta
+        name="keywords"
+        content="Compass, housing, apartments, flats"
+    />
+    <meta name="author" content="Nisandi Jayasuriya" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- common external css style sheet for header -->
+    <link rel="stylesheet" href="css/PropertyStyles.css" />
+    
+    <!-- JQuery Ui links-->
+    <!-- Google maps via https://developers.google.com/speed/libraries#jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+    <!-- Image gallery links -->
+
+    <!-- <script src="image-gallery-plugin/lib/jquery.js" ></script> -->
+
+    <script src="image-gallery-plugin/js/lc_lightbox.lite.js"></script>
+    <link rel="stylesheet" href="image-gallery-plugin/css/lc_lightbox.css" />
+
+    <!-- SKINS -->
+    <link rel="stylesheet" href="image-gallery-plugin/skins/minimal.css" />
+    <link rel="stylesheet" href="image-gallery-plugin/skins/dark.css">
+
+    <!-- ASSETS -->
+    <script src="image-gallery-plugin/lib/AlloyFinger/alloy_finger.min.js"></script>
+
+    <!-- Google Maps-->
+    <script>
+        $(function () {
+          $("#tabs").tabs();
+            $("#tab-google-map").button().click(function () {
+              // location of property 1 via https://www.ukpostcodecheck.com/address/03c2b580/65-petts-wood-road_petts-wood_orpington_br5-1ju
+              // location of property 2 via https://www.ukpostcodecheck.com/address/e0674c2b/307b-crofton-road_orpington_br6-8ez
+                var latlong = {lat:  51.369739, lng:  0.060812};  //property two
+                var map = new google.maps.Map(document.getElementById('map'), {
+                  zoom: 10,
+                  center: latlong
+                });
+                var marker = new google.maps.Marker({
+                  position: latlong,
+                  map: map
+              });
+            });
+        });
+    </script>
+
+</head>
+<body> 
+    <header>
+        <a href="Home.html"><img src="images/compassLogoSmall.png" alt="compass logo"> </a>
+        <h2>Property Three</h2>
+     </header>
+
+    <!-- image slides-->
+    <!-- Container for the image gallery -->
+    <div class="container">
+        <!-- content for small description and images gallery -->
+        <div class="content">
+            <div class="large-image-content">
+                <img class="large-img" src="images/prop3pic1.jpg" alt="prop3 pic1">
+                </div>
+
+                <div class="thumbnail-image-content">
+                    <section>
+                        <h2>House for sale</h2>
+                        <p> Property Type :  House </p>
+                        <p> Price :  £650,000</p>
+                        <p> Location :  Petts Wood Road, Petts Wood, Orpington </p>
+                    </section>    
+            
+                <a class="elem" href="images/prop3pic1.jpg" title="Property Three: image 1"  data-lcl-thumb="images/prop3pic1.jpg">
+                <span style="background-image: url(images/prop3pic1.jpg);"></span>
+                </a>
+                <a class="elem" href="images/prop3pic2.jpg" title="Property Three: image 2"   data-lcl-thumb="images/prop3pic2.jpg">
+                    <span style="background-image: url(images/prop3pic2.jpg);"></span>
+                </a> 
+                <a class="elem" href="images/prop3pic3.jpg" title="Property Three: image 3"   data-lcl-thumb="images/prop3pic3.jpg">
+                    <span style="background-image: url(images/prop3pic3.jpg);"></span>
+                </a>
+                
+                <a class="elem" href="images/prop3pic4.jpg" title="Property Three: image 4"   data-lcl-thumb="images/prop3pic4.jpg">
+                    <span style="background-image: url(images/prop3pic4.jpg);"></span>
+                </a> 
+                <a class="elem" href="images/prop3pic5.jpg" title="Property Three: image 5"   data-lcl-thumb="images/prop3pic5.jpg">
+                    <span style="background-image: url(images/prop3pic5.jpg);"></span>
+                </a>
+                <a class="elem" href="images/prop3pic6.jpg" title="Property Three: image 6" data-lcl-thumb="images/prop3pic6.jpg">
+                    <span style="background-image: url(images/prop3pic4.jpg);"></span>
+                </a>
+                <a class="elem" href="images/prop3pic7.jpg" title="Property Three: image 7"   data-lcl-thumb="images/prop3pic7.jpg">
+                    <span style="background-image: url(images/prop3pic7.jpg);"></span>
+                </a>
+                   <br/><br/>
+
+                </div>
+               </div>
+
+               <!--tab content for long description, floor plan, location and favourites list -->
+            <div class="tab-content">
+
+                <div id="tabs">
+                    <ul>
+                        <li><a href="#tabs-1">Description</a></li>
+                       <li><a href="#tabs-2">Floor Plan</a></li>
+                        <li id="tab-google-map"><a href="#tabs-3">Location</a></li>
+                    </ul>
+                    <article id="tabs-1">
+                       <p>This cozy cottage house offers a large family area convenient to the kitchen and dining areas while still maintaining an 'air' of formality. 
+                           There are plenty of exterior views and numerous covered areas to retreat to and enjoy the outdoors. <br>
+                           The master suite offers some flexibility depending on the owners' preference, view opportunities or privacy concerns. 
+                           The kitchen and dining areas were located at the rear for the family who finds themselves more oriented to barbecuing and porch sitting - including a back lanai fireplace.
+                            The arrangement of the family and kitchen areas provides the ability to enjoy multiple entertaining opportunities.<br> 
+                            The master bath is bathed in natural light from high windows, and enjoys a large vanity with dual sinks and a large walk-in closet as well. 
+                            The secondary bedrooms also have walk-in closets as well as direct bath access. A bonus area over the garage makes a great place to create a media room environment for the hardcore theatre room buff. 
+                           It could also accommodate additional bedrooms or a guest suite.</p>
+                     </article>
+                     
+                     <article id="tabs-2">
+                         <div class="floor-plan">
+                           <img src="images/prop1Plan.jpg" alt="prop3 plan">
+                         </div>
+                     </article>
+                      
+                     <article id="tabs-3">
+                       <!--map location of property one-->
+                        <section id="map">
+                        <!--adding the google map to the location tab-->
+                            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkoPuF252Sl33JfAny3Yq6UvCXLwVECkA&callback=initMap">
+                            </script>
+                        </section>
+                     </article>
+                 </div> 
+                 
+                 <!-- content for adding property to favourites list-->
+                 <div class="favourites-content">
+                    <p id="prop3">
+                        <button id="addFavourites">Add to Favourites</button>
+                        </p>
+                     <div class="property-img"  >
+                     <ul id="property" class="property ui-helper-reset ui-helper-clearfix" >
+                       <li class="ui-widget-content ui-corner-tr"  >
+                         <h5 class="ui-widget-header">Prop 1</h5>
+                         <img src="images/prop3pic1.jpg" alt="prop3 pic1" width="96" height="72">
+                         <h5 class="ui-widget-header"> Drag to favourites</h5>
+                       </li>
+                     </ul>
+                     </div>
+                     <div id="favourites" class="ui-widget-content ui-state-default">
+                       <h4 class="ui-widget-header"><span class="ui-icon ui-icon-favourites">Favourites</span>Favourites</h4>
+                     </div>
+                     </div>
+            </div>
+        </div>
+    
+        <!-- footer for property pages-->
+        <footer>
+            <a href="PropertyThree.html" class="back">Back to top</a>
+            <p>Copyright &copy; 2021 COMPASS. All Rights Reserved </p>
+          </footer>
+
+    <script src="scripts/Properties.js"></script>
+    </body>
+    </html>
